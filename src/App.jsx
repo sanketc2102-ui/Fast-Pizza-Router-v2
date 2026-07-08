@@ -2,7 +2,9 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./ui/Home";
 import Menu, { loader as menuLoader } from "./features/menu/Menu";
-import CreateOrder from "./features/order/CreateOrder";
+import CreateOrder, {
+  action as createOrderAction,
+} from "./features/order/CreateOrder";
 import Cart from "./features/cart/Cart";
 import OrderItem from "./features/order/OrderItem";
 import AppLayout from "./ui/AppLayout";
@@ -33,6 +35,7 @@ export default function App() {
         {
           path: "/order/new",
           element: <CreateOrder />,
+          action: createOrderAction,
         },
 
         {
