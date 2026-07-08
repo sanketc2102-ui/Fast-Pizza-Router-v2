@@ -6,11 +6,13 @@ import CreateOrder from "./features/order/CreateOrder";
 import Cart from "./features/cart/Cart";
 import OrderItem from "./features/order/OrderItem";
 import AppLayout from "./ui/AppLayout";
+import Error from "./ui/Error";
 
 export default function App() {
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
+      errorElement: <Error />,
       children: [
         {
           path: "/",
