@@ -7,6 +7,7 @@ import Cart from "./features/cart/Cart";
 import OrderItem from "./features/order/OrderItem";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
+import Order, { loader as orderLoader } from "./features/order/Order";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -36,7 +37,8 @@ export default function App() {
 
         {
           path: "/order/:id",
-          element: <OrderItem />,
+          element: <Order />,
+          loader: orderLoader,
         },
       ],
     },
